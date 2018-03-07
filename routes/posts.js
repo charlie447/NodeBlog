@@ -6,6 +6,7 @@ const checkLogin = require('../middlewares/check').checkLogin
 router.get('/',function(req,res,next){
   const author = req.query.author
   console.log("出现的问题："+req.query.author)
+  console.log("出现的问题2："+PostModel.getPosts(author))
   PostModel.getPosts(author)
     .then(function (posts) {
       res.render('posts', {
